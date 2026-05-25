@@ -42,6 +42,7 @@ Note that {DATASET_NAME} is one of the the dataset names include ace, ere and ma
 
 This code was further used for the following paper:
 
+```
 @inproceedings{al-monsur-etal-2026-event,
     title = "Event Detection with a Context-Aware Encoder and {L}o{RA} for Improved Performance on Long-Tailed Classes",
     author = "Al Monsur, Abdullah  and
@@ -61,6 +62,7 @@ This code was further used for the following paper:
     ISBN = "979-8-89176-386-9",
     abstract = "The current state of event detection research has two notable re-occurring limitations that we investigate in this study. First, the unidirectional nature of decoder-only LLMs presents a fundamental architectural bottleneck for natural language understanding tasks that depend on rich, bidirectional context. Second, we confront the conventional reliance on Micro-F1 scores in event detection literature, which systematically inflates performance by favoring majority classes. Instead, we focus on Macro-F1 as a more representative measure of a model{'}s ability across the long-tail of event types. Our experiments demonstrate that models enhanced with sentence context achieve superior performance over canonical decoder-only baselines. Using Low-Rank Adaptation (LoRA) during finetuning provides a substantial boost in Macro-F1 scores in particular, especially for the decoder-only models, showing that LoRA can be an effective tool to enhance LLMs' performance on long-tailed event classes."
 }
+```
 
 The base code was used from the following paper:
 

@@ -1,0 +1,674 @@
+
+batch_size 8
+seed 0
+output_dir ./output/
+trigger_encoder_learning_rate 5e-05
+trigger_classifier_learning_rate 5e-05
+argument_detection_leraning_rate 5e-05
+entity_detection_leraning_rate 3e-05
+warmup_proportion 0.1
+weight_decay 0.01
+gradient_accumulation_steps 1
+stream_turn 5
+total_round 6
+merit early_stop
+epochs 10
+early_stop 5
+device None
+trigger_pred_file ./output/trigger/trigger_predict_0.json
+entity_pred_file ./output/entity/entity_predict_0.json
+trigger_encoder_file trigger/trigger_encoder_0.pt
+trigger_classifier_file trigger/trigger_classifier_0.pt
+entity_file entity/entity_detection_0.pt
+argument_file argument/argument_detection_0.pt
+argument False
+bert_path ./pretrain_model
+embedding_dim 768
+entity_emb_dim 100
+hidden_dim 512
+last_k_attention 3
+n_hid 200
+num_labels 1
+args_num 1
+data_root ./data/maven/
+lttest False
+memory_size 10
+memory True
+pseudo True
+kd True
+select True
+attention True
+temp 2
+alpha 1
+beta 1
+longtailedkt True
+Now is round 0
+[1 4 0 3 2]
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.09904859215021133, f1 is 63.22502277558456 and best f1 is 63.22502277558456
+epoch: 1, loss is 0.04940610006451607, f1 is 65.17960602549248 and best f1 is 65.17960602549248
+epoch: 2, loss is 0.036106567829847336, f1 is 61.71025565677343 and best f1 is 65.17960602549248
+epoch: 3, loss is 0.02561197057366371, f1 is 60.34167175106773 and best f1 is 65.17960602549248
+epoch: 4, loss is 0.017886914312839508, f1 is 58.782201405152215 and best f1 is 65.17960602549248
+epoch: 5, loss is 0.01260592881590128, f1 is 58.630136986301366 and best f1 is 65.17960602549248
+epoch: 6, loss is 0.01002782117575407, f1 is 58.08457711442786 and best f1 is 65.17960602549248
+Now task is 1, total trigger f1 is 78.95722310240531
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.1575026512145996
+epoch: 1, loss is 0.08162537217140198
+epoch: 2, loss is 0.0587703213095665
+epoch: 3, loss is 0.04274044558405876
+epoch: 4, loss is 0.03147533908486366
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,  0], device='cuda:0')
+epoch: 0, loss is 0.22125135362148285, f1 is 44.97965467942373 and best f1 is 44.97965467942373
+epoch: 1, loss is 0.2044302523136139, f1 is 44.49808008776742 and best f1 is 44.97965467942373
+epoch: 2, loss is 0.20042000710964203, f1 is 44.171356379924205 and best f1 is 44.97965467942373
+epoch: 3, loss is 0.19756373763084412, f1 is 44.78466791496861 and best f1 is 44.97965467942373
+epoch: 4, loss is 0.19534678757190704, f1 is 44.34149569821311 and best f1 is 44.97965467942373
+epoch: 5, loss is 0.19433124363422394, f1 is 44.061135371179034 and best f1 is 44.97965467942373
+Now task is 2, total trigger f1 is 66.80788240580269
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.21352995932102203
+epoch: 1, loss is 0.09817606955766678
+epoch: 2, loss is 0.06974110007286072
+epoch: 3, loss is 0.05388030409812927
+epoch: 4, loss is 0.04434652999043465
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61,  0], device='cuda:0')
+epoch: 0, loss is 0.36114928126335144, f1 is 37.448651878407645 and best f1 is 37.448651878407645
+epoch: 1, loss is 0.34176549315452576, f1 is 37.94988287073188 and best f1 is 37.94988287073188
+epoch: 2, loss is 0.33730003237724304, f1 is 37.336832654188825 and best f1 is 37.94988287073188
+epoch: 3, loss is 0.3334510624408722, f1 is 38.01060825239375 and best f1 is 38.01060825239375
+epoch: 4, loss is 0.33192363381385803, f1 is 37.10063335679099 and best f1 is 38.01060825239375
+epoch: 5, loss is 0.3299124538898468, f1 is 37.51181953262191 and best f1 is 38.01060825239375
+epoch: 6, loss is 0.32853925228118896, f1 is 36.12476951444376 and best f1 is 38.01060825239375
+epoch: 7, loss is 0.3277772068977356, f1 is 37.31757670677013 and best f1 is 38.01060825239375
+epoch: 8, loss is 0.3259405493736267, f1 is 37.770853986687435 and best f1 is 38.01060825239375
+Now task is 3, total trigger f1 is 61.72265590737655
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.3101983964443207
+epoch: 1, loss is 0.14411400258541107
+epoch: 2, loss is 0.10293987393379211
+epoch: 3, loss is 0.07993018627166748
+epoch: 4, loss is 0.06315919011831284
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+        73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+        91, 92, 93, 94,  0], device='cuda:0')
+epoch: 0, loss is 0.44242921471595764, f1 is 31.26800398051642 and best f1 is 31.26800398051642
+epoch: 1, loss is 0.41713494062423706, f1 is 31.093435256443364 and best f1 is 31.26800398051642
+epoch: 2, loss is 0.4107525944709778, f1 is 31.388756424521812 and best f1 is 31.388756424521812
+epoch: 3, loss is 0.40703868865966797, f1 is 31.784185278795068 and best f1 is 31.784185278795068
+epoch: 4, loss is 0.40454742312431335, f1 is 31.168559317599033 and best f1 is 31.784185278795068
+epoch: 5, loss is 0.40228986740112305, f1 is 31.376734258271078 and best f1 is 31.784185278795068
+epoch: 6, loss is 0.4004278779029846, f1 is 32.43837337101586 and best f1 is 32.43837337101586
+epoch: 7, loss is 0.3988388776779175, f1 is 31.465240641711233 and best f1 is 32.43837337101586
+epoch: 8, loss is 0.39716559648513794, f1 is 32.342328607003104 and best f1 is 32.43837337101586
+epoch: 9, loss is 0.396331787109375, f1 is 31.968974372412347 and best f1 is 32.43837337101586
+epoch: 10, loss is 0.395940363407135, f1 is 32.12349630853426 and best f1 is 32.43837337101586
+epoch: 11, loss is 0.39458903670310974, f1 is 32.01848998459168 and best f1 is 32.43837337101586
+Now task is 4, total trigger f1 is 56.794560124017906
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.3439864218235016
+epoch: 1, loss is 0.154732808470726
+epoch: 2, loss is 0.1112590953707695
+epoch: 3, loss is 0.08517628163099289
+epoch: 4, loss is 0.06958820670843124
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129,   0], device='cuda:0')
+epoch: 0, loss is 0.5198797583580017, f1 is 28.762309326124736 and best f1 is 28.762309326124736
+epoch: 1, loss is 0.49104782938957214, f1 is 28.956152328933396 and best f1 is 28.956152328933396
+epoch: 2, loss is 0.4844200015068054, f1 is 29.05604719764012 and best f1 is 29.05604719764012
+epoch: 3, loss is 0.4797329902648926, f1 is 28.45438186760595 and best f1 is 29.05604719764012
+epoch: 4, loss is 0.4770413041114807, f1 is 29.18870259930235 and best f1 is 29.18870259930235
+epoch: 5, loss is 0.4750075936317444, f1 is 28.72780159216167 and best f1 is 29.18870259930235
+epoch: 6, loss is 0.4728430509567261, f1 is 29.10317640815708 and best f1 is 29.18870259930235
+epoch: 7, loss is 0.4711516201496124, f1 is 28.7254495419761 and best f1 is 29.18870259930235
+epoch: 8, loss is 0.469783216714859, f1 is 28.9394109082764 and best f1 is 29.18870259930235
+epoch: 9, loss is 0.4682038426399231, f1 is 29.06524774519793 and best f1 is 29.18870259930235
+Now task is 5, total trigger f1 is 57.26237637476798
+Now is round 1
+[4 3 2 0 1]
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.10365436226129532, f1 is 63.65217391304349 and best f1 is 63.65217391304349
+epoch: 1, loss is 0.05552658811211586, f1 is 63.239331170451706 and best f1 is 63.65217391304349
+epoch: 2, loss is 0.03973318263888359, f1 is 61.167883211678834 and best f1 is 63.65217391304349
+epoch: 3, loss is 0.02776864729821682, f1 is 59.48951225676017 and best f1 is 63.65217391304349
+epoch: 4, loss is 0.018940260633826256, f1 is 56.31117980422463 and best f1 is 63.65217391304349
+epoch: 5, loss is 0.014112967997789383, f1 is 54.05848592511615 and best f1 is 63.65217391304349
+Now task is 1, total trigger f1 is 77.02702702702703
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.15694069862365723
+epoch: 1, loss is 0.07767035812139511
+epoch: 2, loss is 0.05641107261180878
+epoch: 3, loss is 0.040949899703264236
+epoch: 4, loss is 0.0300592090934515
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,  0],
+       device='cuda:0')
+epoch: 0, loss is 0.25862473249435425, f1 is 44.21452702702703 and best f1 is 44.21452702702703
+epoch: 1, loss is 0.24108585715293884, f1 is 43.73859856207748 and best f1 is 44.21452702702703
+epoch: 2, loss is 0.23638968169689178, f1 is 44.0251572327044 and best f1 is 44.21452702702703
+epoch: 3, loss is 0.23322013020515442, f1 is 43.683713115614836 and best f1 is 44.21452702702703
+epoch: 4, loss is 0.23220227658748627, f1 is 43.72942550706169 and best f1 is 44.21452702702703
+epoch: 5, loss is 0.2311764359474182, f1 is 43.34745762711865 and best f1 is 44.21452702702703
+Now task is 2, total trigger f1 is 64.641192917055
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.22625203430652618
+epoch: 1, loss is 0.10406213998794556
+epoch: 2, loss is 0.07509644329547882
+epoch: 3, loss is 0.055972982197999954
+epoch: 4, loss is 0.04603961482644081
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66,  0], device='cuda:0')
+epoch: 0, loss is 0.31153756380081177, f1 is 35.977786592621975 and best f1 is 35.977786592621975
+epoch: 1, loss is 0.29374879598617554, f1 is 35.1924587588374 and best f1 is 35.977786592621975
+epoch: 2, loss is 0.28870683908462524, f1 is 34.92162229410301 and best f1 is 35.977786592621975
+epoch: 3, loss is 0.2857981026172638, f1 is 35.80940359734932 and best f1 is 35.977786592621975
+epoch: 4, loss is 0.2836880385875702, f1 is 36.484309556028094 and best f1 is 36.484309556028094
+epoch: 5, loss is 0.28175225853919983, f1 is 36.08201612391291 and best f1 is 36.484309556028094
+epoch: 6, loss is 0.28112512826919556, f1 is 35.46315301595709 and best f1 is 36.484309556028094
+epoch: 7, loss is 0.2797321677207947, f1 is 35.85067723818963 and best f1 is 36.484309556028094
+epoch: 8, loss is 0.2784351706504822, f1 is 34.90776403811068 and best f1 is 36.484309556028094
+epoch: 9, loss is 0.27818265557289124, f1 is 35.54950751684811 and best f1 is 36.484309556028094
+Now task is 3, total trigger f1 is 61.38160632542655
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.28588926792144775
+epoch: 1, loss is 0.12430467456579208
+epoch: 2, loss is 0.09075119346380234
+epoch: 3, loss is 0.07058516889810562
+epoch: 4, loss is 0.05870097875595093
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105,   0], device='cuda:0')
+epoch: 0, loss is 0.41056984663009644, f1 is 30.399001078381293 and best f1 is 30.399001078381293
+epoch: 1, loss is 0.3861596882343292, f1 is 31.33972559199025 and best f1 is 31.33972559199025
+epoch: 2, loss is 0.3798828423023224, f1 is 30.853152956578658 and best f1 is 31.33972559199025
+epoch: 3, loss is 0.3771933913230896, f1 is 31.08178866897058 and best f1 is 31.33972559199025
+epoch: 4, loss is 0.37421125173568726, f1 is 31.26802692020083 and best f1 is 31.33972559199025
+epoch: 5, loss is 0.3720051944255829, f1 is 32.06781037458126 and best f1 is 32.06781037458126
+epoch: 6, loss is 0.3697477877140045, f1 is 31.246644475464407 and best f1 is 32.06781037458126
+epoch: 7, loss is 0.36888065934181213, f1 is 31.238074469825 and best f1 is 32.06781037458126
+epoch: 8, loss is 0.36778345704078674, f1 is 31.96828212217643 and best f1 is 32.06781037458126
+epoch: 9, loss is 0.3674483895301819, f1 is 31.748841568178264 and best f1 is 32.06781037458126
+epoch: 10, loss is 0.3658398389816284, f1 is 31.578390391025984 and best f1 is 32.06781037458126
+Now task is 4, total trigger f1 is 57.37665791537386
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.31839224696159363
+epoch: 1, loss is 0.143336683511734
+epoch: 2, loss is 0.10349402576684952
+epoch: 3, loss is 0.07910037040710449
+epoch: 4, loss is 0.06529005616903305
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138,   0],
+       device='cuda:0')
+epoch: 0, loss is 0.5018139481544495, f1 is 29.78830103521152 and best f1 is 29.78830103521152
+epoch: 1, loss is 0.47030889987945557, f1 is 29.459192211150828 and best f1 is 29.78830103521152
+epoch: 2, loss is 0.46413281559944153, f1 is 29.636800123906145 and best f1 is 29.78830103521152
+epoch: 3, loss is 0.4611951410770416, f1 is 29.338562485858656 and best f1 is 29.78830103521152
+epoch: 4, loss is 0.45768195390701294, f1 is 29.609572249259024 and best f1 is 29.78830103521152
+epoch: 5, loss is 0.45552778244018555, f1 is 30.128588516746408 and best f1 is 30.128588516746408
+epoch: 6, loss is 0.4541161060333252, f1 is 30.113766511414827 and best f1 is 30.128588516746408
+epoch: 7, loss is 0.4530281722545624, f1 is 29.321696524268873 and best f1 is 30.128588516746408
+epoch: 8, loss is 0.45163121819496155, f1 is 29.40890203271815 and best f1 is 30.128588516746408
+epoch: 9, loss is 0.4507550001144409, f1 is 29.940525483700977 and best f1 is 30.128588516746408
+epoch: 10, loss is 0.4500075578689575, f1 is 29.759283165008732 and best f1 is 30.128588516746408
+Now task is 5, total trigger f1 is 57.235117158391525
+Now is round 2
+[1 2 3 0 4]
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.09380056709051132, f1 is 65.49375709421113 and best f1 is 65.49375709421113
+epoch: 1, loss is 0.050182461738586426, f1 is 63.72663551401869 and best f1 is 65.49375709421113
+epoch: 2, loss is 0.03529498726129532, f1 is 61.95388349514563 and best f1 is 65.49375709421113
+epoch: 3, loss is 0.02469806745648384, f1 is 60.97417840375587 and best f1 is 65.49375709421113
+epoch: 4, loss is 0.016439266502857208, f1 is 58.62388151804999 and best f1 is 65.49375709421113
+epoch: 5, loss is 0.011792333796620369, f1 is 58.55283075991523 and best f1 is 65.49375709421113
+Now task is 1, total trigger f1 is 78.11331607707794
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.1493549793958664
+epoch: 1, loss is 0.07449862360954285
+epoch: 2, loss is 0.053980302065610886
+epoch: 3, loss is 0.03832186385989189
+epoch: 4, loss is 0.028251783922314644
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,  0], device='cuda:0')
+epoch: 0, loss is 0.21348817646503448, f1 is 46.53132124633591 and best f1 is 46.53132124633591
+epoch: 1, loss is 0.19863437116146088, f1 is 46.30497878990846 and best f1 is 46.53132124633591
+epoch: 2, loss is 0.1954958140850067, f1 is 46.044759583425666 and best f1 is 46.53132124633591
+epoch: 3, loss is 0.19259855151176453, f1 is 46.11289785959853 and best f1 is 46.53132124633591
+epoch: 4, loss is 0.19129572808742523, f1 is 45.56905584661688 and best f1 is 46.53132124633591
+epoch: 5, loss is 0.18973290920257568, f1 is 45.39152176383679 and best f1 is 46.53132124633591
+Now task is 2, total trigger f1 is 69.94356453668306
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.23286354541778564
+epoch: 1, loss is 0.10414937883615494
+epoch: 2, loss is 0.07387012243270874
+epoch: 3, loss is 0.056762780994176865
+epoch: 4, loss is 0.042828865349292755
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,  0],
+       device='cuda:0')
+epoch: 0, loss is 0.3405505120754242, f1 is 37.06116539992762 and best f1 is 37.06116539992762
+epoch: 1, loss is 0.32037287950515747, f1 is 35.64954682779456 and best f1 is 37.06116539992762
+epoch: 2, loss is 0.3156302273273468, f1 is 36.51019440493125 and best f1 is 37.06116539992762
+epoch: 3, loss is 0.31246304512023926, f1 is 36.345939933259174 and best f1 is 37.06116539992762
+epoch: 4, loss is 0.3098313510417938, f1 is 35.62203575337468 and best f1 is 37.06116539992762
+epoch: 5, loss is 0.30946066975593567, f1 is 37.20599729979393 and best f1 is 37.20599729979393
+epoch: 6, loss is 0.30709636211395264, f1 is 36.05213061941719 and best f1 is 37.20599729979393
+epoch: 7, loss is 0.30641013383865356, f1 is 36.63046668623423 and best f1 is 37.20599729979393
+epoch: 8, loss is 0.3057907819747925, f1 is 37.08664135312392 and best f1 is 37.20599729979393
+epoch: 9, loss is 0.30442190170288086, f1 is 36.85291098401525 and best f1 is 37.20599729979393
+epoch: 10, loss is 0.3042134642601013, f1 is 36.57266811279826 and best f1 is 37.20599729979393
+Now task is 3, total trigger f1 is 61.044985121652374
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.27659785747528076
+epoch: 1, loss is 0.12555146217346191
+epoch: 2, loss is 0.08979330211877823
+epoch: 3, loss is 0.06957925111055374
+epoch: 4, loss is 0.05739683657884598
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104,   0], device='cuda:0')
+epoch: 0, loss is 0.39519453048706055, f1 is 32.98969072164949 and best f1 is 32.98969072164949
+epoch: 1, loss is 0.3728298544883728, f1 is 32.58123718017921 and best f1 is 32.98969072164949
+epoch: 2, loss is 0.36726897954940796, f1 is 32.37733803198699 and best f1 is 32.98969072164949
+epoch: 3, loss is 0.3640004098415375, f1 is 31.405777166437417 and best f1 is 32.98969072164949
+epoch: 4, loss is 0.3614572584629059, f1 is 33.420969607740034 and best f1 is 33.420969607740034
+epoch: 5, loss is 0.3593778908252716, f1 is 32.159097134717584 and best f1 is 33.420969607740034
+epoch: 6, loss is 0.35824787616729736, f1 is 32.680966546631176 and best f1 is 33.420969607740034
+epoch: 7, loss is 0.35676097869873047, f1 is 32.53117479763728 and best f1 is 33.420969607740034
+epoch: 8, loss is 0.35585707426071167, f1 is 32.78117746359992 and best f1 is 33.420969607740034
+epoch: 9, loss is 0.3548470139503479, f1 is 33.118020582439236 and best f1 is 33.420969607740034
+Now task is 4, total trigger f1 is 59.08431738139632
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.30151835083961487
+epoch: 1, loss is 0.14196185767650604
+epoch: 2, loss is 0.10170432180166245
+epoch: 3, loss is 0.0775025337934494
+epoch: 4, loss is 0.06295092403888702
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137,   0],
+       device='cuda:0')
+epoch: 0, loss is 0.50119549036026, f1 is 29.164174641148325 and best f1 is 29.164174641148325
+epoch: 1, loss is 0.47413256764411926, f1 is 28.918781128671718 and best f1 is 29.164174641148325
+epoch: 2, loss is 0.4685927629470825, f1 is 28.61402033483678 and best f1 is 29.164174641148325
+epoch: 3, loss is 0.4654437303543091, f1 is 28.644602048857365 and best f1 is 29.164174641148325
+epoch: 4, loss is 0.4626237154006958, f1 is 28.804265041888804 and best f1 is 29.164174641148325
+epoch: 5, loss is 0.46031031012535095, f1 is 29.091327882068413 and best f1 is 29.164174641148325
+Now task is 5, total trigger f1 is 56.71175002057556
+Now is round 3
+[2 1 4 0 3]
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.10435526072978973, f1 is 62.96472831267873 and best f1 is 62.96472831267873
+epoch: 1, loss is 0.054472438991069794, f1 is 61.94932663775393 and best f1 is 62.96472831267873
+epoch: 2, loss is 0.03866317495703697, f1 is 57.5 and best f1 is 62.96472831267873
+epoch: 3, loss is 0.026696689426898956, f1 is 56.85207100591715 and best f1 is 62.96472831267873
+epoch: 4, loss is 0.018933555111289024, f1 is 55.50387596899225 and best f1 is 62.96472831267873
+epoch: 5, loss is 0.013590236194431782, f1 is 54.80868665977249 and best f1 is 62.96472831267873
+Now task is 1, total trigger f1 is 78.1737990225295
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.16005298495292664
+epoch: 1, loss is 0.07062074542045593
+epoch: 2, loss is 0.0517442561686039
+epoch: 3, loss is 0.039287958294153214
+epoch: 4, loss is 0.029186611995100975
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39,  0], device='cuda:0')
+epoch: 0, loss is 0.3886827826499939, f1 is 47.827598192561695 and best f1 is 47.827598192561695
+epoch: 1, loss is 0.3675081431865692, f1 is 46.941045606229146 and best f1 is 47.827598192561695
+epoch: 2, loss is 0.3638033866882324, f1 is 46.63167104111986 and best f1 is 47.827598192561695
+epoch: 3, loss is 0.36169180274009705, f1 is 47.16336295283663 and best f1 is 47.827598192561695
+epoch: 4, loss is 0.35944613814353943, f1 is 47.965348227516245 and best f1 is 47.965348227516245
+epoch: 5, loss is 0.3582702875137329, f1 is 47.26066567539746 and best f1 is 47.965348227516245
+epoch: 6, loss is 0.35778379440307617, f1 is 47.123349003805686 and best f1 is 47.965348227516245
+epoch: 7, loss is 0.3567516803741455, f1 is 47.54461682024962 and best f1 is 47.965348227516245
+epoch: 8, loss is 0.3563172221183777, f1 is 47.04128440366973 and best f1 is 47.965348227516245
+epoch: 9, loss is 0.35584309697151184, f1 is 47.33242134062927 and best f1 is 47.965348227516245
+Now task is 2, total trigger f1 is 68.74682902080163
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.22094710171222687
+epoch: 1, loss is 0.09846342355012894
+epoch: 2, loss is 0.07127117365598679
+epoch: 3, loss is 0.05248285457491875
+epoch: 4, loss is 0.040779825299978256
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,  0],
+       device='cuda:0')
+epoch: 0, loss is 0.455625057220459, f1 is 36.88723738745177 and best f1 is 36.88723738745177
+epoch: 1, loss is 0.4379737377166748, f1 is 33.82401587826662 and best f1 is 36.88723738745177
+epoch: 2, loss is 0.43360087275505066, f1 is 36.08967826466735 and best f1 is 36.88723738745177
+epoch: 3, loss is 0.4308425188064575, f1 is 36.41017918988104 and best f1 is 36.88723738745177
+epoch: 4, loss is 0.42933592200279236, f1 is 36.44734046320561 and best f1 is 36.88723738745177
+epoch: 5, loss is 0.4283974766731262, f1 is 35.752628869769836 and best f1 is 36.88723738745177
+Now task is 3, total trigger f1 is 58.824593128390596
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.25337740778923035
+epoch: 1, loss is 0.12236062437295914
+epoch: 2, loss is 0.08958448469638824
+epoch: 3, loss is 0.0696098729968071
+epoch: 4, loss is 0.05734390392899513
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100,   0], device='cuda:0')
+epoch: 0, loss is 0.451474666595459, f1 is 32.63964950711939 and best f1 is 32.63964950711939
+epoch: 1, loss is 0.43113207817077637, f1 is 32.75401069518716 and best f1 is 32.75401069518716
+epoch: 2, loss is 0.4255901873111725, f1 is 33.87989035634189 and best f1 is 33.87989035634189
+epoch: 3, loss is 0.4233129322528839, f1 is 32.75329489291598 and best f1 is 33.87989035634189
+epoch: 4, loss is 0.42052438855171204, f1 is 32.96174177003193 and best f1 is 33.87989035634189
+epoch: 5, loss is 0.41863805055618286, f1 is 32.57831811532059 and best f1 is 33.87989035634189
+epoch: 6, loss is 0.4174255430698395, f1 is 32.34242517111043 and best f1 is 33.87989035634189
+epoch: 7, loss is 0.41583457589149475, f1 is 32.962577393019565 and best f1 is 33.87989035634189
+Now task is 4, total trigger f1 is 59.68632799181725
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.3476516902446747
+epoch: 1, loss is 0.16323615610599518
+epoch: 2, loss is 0.11883290112018585
+epoch: 3, loss is 0.09467015415430069
+epoch: 4, loss is 0.07742390781641006
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129, 130, 131, 132, 133,   0], device='cuda:0')
+epoch: 0, loss is 0.5295689702033997, f1 is 30.33421011913972 and best f1 is 30.33421011913972
+epoch: 1, loss is 0.5026798248291016, f1 is 29.101759280787416 and best f1 is 30.33421011913972
+epoch: 2, loss is 0.4955510199069977, f1 is 30.08460363012933 and best f1 is 30.33421011913972
+epoch: 3, loss is 0.4916394054889679, f1 is 30.098848617230022 and best f1 is 30.33421011913972
+epoch: 4, loss is 0.4886033535003662, f1 is 29.70445754628413 and best f1 is 30.33421011913972
+epoch: 5, loss is 0.4866490364074707, f1 is 29.922933829391443 and best f1 is 30.33421011913972
+Now task is 5, total trigger f1 is 56.78850055725431
+Now is round 4
+[0 2 1 4 3]
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.09446524828672409, f1 is 66.23342864569794 and best f1 is 66.23342864569794
+epoch: 1, loss is 0.045872680842876434, f1 is 66.70397313933968 and best f1 is 66.70397313933968
+epoch: 2, loss is 0.03207788243889809, f1 is 65.46052631578948 and best f1 is 66.70397313933968
+epoch: 3, loss is 0.02270977385342121, f1 is 63.27014218009479 and best f1 is 66.70397313933968
+epoch: 4, loss is 0.01723596639931202, f1 is 62.45353159851301 and best f1 is 66.70397313933968
+epoch: 5, loss is 0.013145086355507374, f1 is 60.7932182864063 and best f1 is 66.70397313933968
+epoch: 6, loss is 0.011158332228660583, f1 is 60.58373476905639 and best f1 is 66.70397313933968
+Now task is 1, total trigger f1 is 80.42184964845863
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.15484634041786194
+epoch: 1, loss is 0.07408177107572556
+epoch: 2, loss is 0.05121268332004547
+epoch: 3, loss is 0.037377770990133286
+epoch: 4, loss is 0.02822030894458294
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,  0],
+       device='cuda:0')
+epoch: 0, loss is 0.20020441710948944, f1 is 48.08317089018844 and best f1 is 48.08317089018844
+epoch: 1, loss is 0.18544438481330872, f1 is 46.40034643282451 and best f1 is 48.08317089018844
+epoch: 2, loss is 0.18222707509994507, f1 is 46.317421641377784 and best f1 is 48.08317089018844
+epoch: 3, loss is 0.17945003509521484, f1 is 46.916275515773386 and best f1 is 48.08317089018844
+epoch: 4, loss is 0.1778019815683365, f1 is 46.085351286784665 and best f1 is 48.08317089018844
+epoch: 5, loss is 0.17759375274181366, f1 is 47.32312506985581 and best f1 is 48.08317089018844
+Now task is 2, total trigger f1 is 71.00267777447188
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.23438957333564758
+epoch: 1, loss is 0.09617552906274796
+epoch: 2, loss is 0.06740304082632065
+epoch: 3, loss is 0.05210334435105324
+epoch: 4, loss is 0.04227751865983009
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+         0], device='cuda:0')
+epoch: 0, loss is 0.31781527400016785, f1 is 38.02548256656748 and best f1 is 38.02548256656748
+epoch: 1, loss is 0.29444995522499084, f1 is 37.14241050492418 and best f1 is 38.02548256656748
+epoch: 2, loss is 0.28936952352523804, f1 is 38.29851879984808 and best f1 is 38.29851879984808
+epoch: 3, loss is 0.2864260673522949, f1 is 36.38720129607129 and best f1 is 38.29851879984808
+epoch: 4, loss is 0.28424370288848877, f1 is 36.9935691318328 and best f1 is 38.29851879984808
+epoch: 5, loss is 0.2831783890724182, f1 is 38.10719610766696 and best f1 is 38.29851879984808
+epoch: 6, loss is 0.2814995348453522, f1 is 36.72 and best f1 is 38.29851879984808
+epoch: 7, loss is 0.2809560298919678, f1 is 37.65838011226944 and best f1 is 38.29851879984808
+Now task is 3, total trigger f1 is 61.75489882610881
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.2486422061920166
+epoch: 1, loss is 0.12370610237121582
+epoch: 2, loss is 0.09019163995981216
+epoch: 3, loss is 0.06868257373571396
+epoch: 4, loss is 0.05526111647486687
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102,   0], device='cuda:0')
+epoch: 0, loss is 0.3751363158226013, f1 is 32.060081567691235 and best f1 is 32.060081567691235
+epoch: 1, loss is 0.3531979024410248, f1 is 31.882248920788477 and best f1 is 32.060081567691235
+epoch: 2, loss is 0.3475084900856018, f1 is 32.08793375394322 and best f1 is 32.08793375394322
+epoch: 3, loss is 0.34445300698280334, f1 is 31.82349651771643 and best f1 is 32.08793375394322
+epoch: 4, loss is 0.3426525294780731, f1 is 31.32530120481928 and best f1 is 32.08793375394322
+epoch: 5, loss is 0.3402743935585022, f1 is 31.978347993546038 and best f1 is 32.08793375394322
+epoch: 6, loss is 0.33902159333229065, f1 is 32.19088059852391 and best f1 is 32.19088059852391
+epoch: 7, loss is 0.3377832770347595, f1 is 31.315846054611917 and best f1 is 32.19088059852391
+epoch: 8, loss is 0.33670833706855774, f1 is 31.77608142493639 and best f1 is 32.19088059852391
+epoch: 9, loss is 0.3358631730079651, f1 is 31.98789101917255 and best f1 is 32.19088059852391
+epoch: 10, loss is 0.33547574281692505, f1 is 31.440956807855017 and best f1 is 32.19088059852391
+epoch: 11, loss is 0.33413854241371155, f1 is 31.887703763332663 and best f1 is 32.19088059852391
+Now task is 4, total trigger f1 is 57.382607802171464
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.3179647624492645
+epoch: 1, loss is 0.14097413420677185
+epoch: 2, loss is 0.09921485185623169
+epoch: 3, loss is 0.07560202479362488
+epoch: 4, loss is 0.06143741309642792
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129, 130, 131, 132, 133,   0], device='cuda:0')
+epoch: 0, loss is 0.4574553668498993, f1 is 27.942888181888726 and best f1 is 27.942888181888726
+epoch: 1, loss is 0.42984539270401, f1 is 28.433771219934506 and best f1 is 28.433771219934506
+epoch: 2, loss is 0.4226187765598297, f1 is 28.44057361663788 and best f1 is 28.44057361663788
+epoch: 3, loss is 0.42004457116127014, f1 is 28.228159939359486 and best f1 is 28.44057361663788
+epoch: 4, loss is 0.4165728688240051, f1 is 28.5703673439067 and best f1 is 28.5703673439067
+epoch: 5, loss is 0.41481781005859375, f1 is 28.756476683937827 and best f1 is 28.756476683937827
+epoch: 6, loss is 0.4134967029094696, f1 is 28.834870075440065 and best f1 is 28.834870075440065
+epoch: 7, loss is 0.41189855337142944, f1 is 28.37511036044681 and best f1 is 28.834870075440065
+epoch: 8, loss is 0.41070833802223206, f1 is 28.048920752980866 and best f1 is 28.834870075440065
+epoch: 9, loss is 0.40911009907722473, f1 is 28.29954167637691 and best f1 is 28.834870075440065
+epoch: 10, loss is 0.4092177152633667, f1 is 28.420644159875827 and best f1 is 28.834870075440065
+epoch: 11, loss is 0.40826651453971863, f1 is 28.525013845301828 and best f1 is 28.834870075440065
+Now task is 5, total trigger f1 is 55.5739313244569
+Now is round 5
+[0 1 4 2 3]
+['Violence', 'Aiming', 'Reveal_secret', 'Being_in_operation', 'Removing', 'Check', 'Reforming_a_system', 'Extradition', 'Becoming', 'Create_artwork', 'Lighting', 'Connect', 'Hiding_objects', 'Cause_change_of_position_on_a_scale', 'Cure', 'Collaboration', 'Vocalizations', 'Choosing', 'Reporting', 'Change_event_time', 'Emergency', 'Cause_change_of_strength', 'Research', 'Writing', 'Rewards_and_punishments', 'Sign_agreement', 'Limiting', 'Catastrophe', 'Supply', 'Surrounding', 'Hold', 'Preventing_or_letting', 'Process_start']
+now is training trigger detection model
+epoch: 0, loss is 0.09418263286352158, f1 is 65.625 and best f1 is 65.625
+epoch: 1, loss is 0.04565812647342682, f1 is 65.39392309760689 and best f1 is 65.625
+epoch: 2, loss is 0.0315902903676033, f1 is 64.87579433853264 and best f1 is 65.625
+epoch: 3, loss is 0.022637205198407173, f1 is 63.399433427762034 and best f1 is 65.625
+epoch: 4, loss is 0.016076264902949333, f1 is 61.6144018583043 and best f1 is 65.625
+epoch: 5, loss is 0.012799718417227268, f1 is 60.5349344978166 and best f1 is 65.625
+Now task is 1, total trigger f1 is 80.59125964010283
+['Military_operation', 'Suspicion', 'Influence', 'Destroying', 'Damaging', 'Hostile_encounter', 'Earnings_and_losses', 'Forming_relationships', 'Award', 'Imposing_obligation', 'Rescuing', 'Deciding', 'Departing', 'Containing', 'Emptying', 'Education_teaching', 'Risk', 'Expansion', 'Revenge', 'Manufacturing', 'Supporting', 'Commerce_pay', 'Bodily_harm', 'GiveUp', 'Prison', 'Hindering', 'Change', 'Coming_to_be', 'Becoming_a_member', 'Dispersal']
+now is training trigger detection model
+epoch: 0, loss is 0.14751464128494263
+^[[Bepoch: 1, loss is 0.06911083310842514
+epoch: 2, loss is 0.05173459276556969
+epoch: 3, loss is 0.03950689733028412
+epoch: 4, loss is 0.02863886021077633
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,  0],
+       device='cuda:0')
+epoch: 0, loss is 0.26921939849853516, f1 is 49.49698189134809 and best f1 is 49.49698189134809
+epoch: 1, loss is 0.252857506275177, f1 is 46.86082597278587 and best f1 is 49.49698189134809
+epoch: 2, loss is 0.24902860820293427, f1 is 49.79985872380504 and best f1 is 49.79985872380504
+epoch: 3, loss is 0.24646246433258057, f1 is 48.312652209207926 and best f1 is 49.79985872380504
+epoch: 4, loss is 0.24474038183689117, f1 is 48.42473745624271 and best f1 is 49.79985872380504
+epoch: 5, loss is 0.24369199573993683, f1 is 48.914956011730204 and best f1 is 49.79985872380504
+epoch: 6, loss is 0.24256469309329987, f1 is 48.04627552827293 and best f1 is 49.79985872380504
+epoch: 7, loss is 0.24179300665855408, f1 is 47.72753690573055 and best f1 is 49.79985872380504
+Now task is 2, total trigger f1 is 70.49147970261201
+['Testing', 'Presence', 'Warning', 'Name_conferral', 'Response', 'Rite', 'Bearing_arms', 'Cause_to_be_included', 'Bringing', 'Preserving', 'Having_or_lacking_access', 'Theft', 'Cost', 'Killing', 'Action', 'Arriving', 'Committing_crime', 'Ratification', 'Know', 'Commitment', 'Terrorism', 'Creating', 'Request', 'Publishing', 'Filling', 'Exchange', 'Participation', 'Incident', 'Using', 'Motion', 'Attack']
+now is training trigger detection model
+epoch: 0, loss is 0.19960616528987885
+epoch: 1, loss is 0.09537182748317719
+epoch: 2, loss is 0.06845462322235107
+epoch: 3, loss is 0.053017377853393555
+epoch: 4, loss is 0.04123970866203308
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63,  0], device='cuda:0')
+epoch: 0, loss is 0.3246639668941498, f1 is 37.401070324866204 and best f1 is 37.401070324866204
+epoch: 1, loss is 0.30888643860816956, f1 is 37.943953244417806 and best f1 is 37.943953244417806
+epoch: 2, loss is 0.30423957109451294, f1 is 37.193471029627915 and best f1 is 37.943953244417806
+epoch: 3, loss is 0.30265912413597107, f1 is 37.73781989106916 and best f1 is 37.943953244417806
+epoch: 4, loss is 0.30010128021240234, f1 is 38.00797370077638 and best f1 is 38.00797370077638
+epoch: 5, loss is 0.29912710189819336, f1 is 36.44836889870002 and best f1 is 38.00797370077638
+epoch: 6, loss is 0.29757171869277954, f1 is 37.78572993500329 and best f1 is 38.00797370077638
+epoch: 7, loss is 0.29694464802742004, f1 is 38.220986796386384 and best f1 is 38.220986796386384
+epoch: 8, loss is 0.2966543436050415, f1 is 37.574596625653875 and best f1 is 38.220986796386384
+epoch: 9, loss is 0.2960515022277832, f1 is 37.05307158319027 and best f1 is 38.220986796386384
+epoch: 10, loss is 0.29492583870887756, f1 is 38.32548851804307 and best f1 is 38.32548851804307
+epoch: 11, loss is 0.29473525285720825, f1 is 37.63076257124306 and best f1 is 38.32548851804307
+epoch: 12, loss is 0.2945328652858734, f1 is 38.360560093348894 and best f1 is 38.360560093348894
+epoch: 13, loss is 0.2941042482852936, f1 is 36.72763934898459 and best f1 is 38.360560093348894
+epoch: 14, loss is 0.2937487065792084, f1 is 37.30276868115511 and best f1 is 38.360560093348894
+epoch: 15, loss is 0.29376351833343506, f1 is 37.45696916428624 and best f1 is 38.360560093348894
+epoch: 16, loss is 0.29302164912223816, f1 is 37.632166790766945 and best f1 is 38.360560093348894
+epoch: 17, loss is 0.29252612590789795, f1 is 38.116085298686635 and best f1 is 38.360560093348894
+Now task is 3, total trigger f1 is 62.21654423506867
+['Commerce_buy', 'GetReady', 'Robbery', 'Coming_to_believe', 'Surrendering', 'Releasing', 'Criminal_investigation', 'Conquering', 'Expend_resource', 'Process_end', 'Carry_goods', 'Adducing', 'Change_tool', 'Sending', 'Arranging', 'Competition', 'Body_movement', 'Change_of_leadership', 'Telling', 'Openness', 'Breathing', 'Renting', 'Change_sentiment', 'Ingestion', 'Judgment_communication', 'Escaping', 'Use_firearm', 'Control', 'Besieging', 'Scouring', 'Achieve', 'Convincing', 'Perception_active', 'Confronting_problem', 'Come_together', 'Resolve_problem', 'Practice', 'Cause_to_amalgamate', 'Causation']
+now is training trigger detection model
+epoch: 0, loss is 0.2764808237552643
+epoch: 1, loss is 0.12552359700202942
+epoch: 2, loss is 0.09089189022779465
+epoch: 3, loss is 0.07029116153717041
+epoch: 4, loss is 0.05645880475640297
+tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
+        37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+        55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72,
+        73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+        91, 92, 93, 94,  0], device='cuda:0')
+epoch: 0, loss is 0.388849675655365, f1 is 31.787571858746237 and best f1 is 31.787571858746237
+epoch: 1, loss is 0.3696939945220947, f1 is 32.33944954128441 and best f1 is 32.33944954128441
+epoch: 2, loss is 0.3643125593662262, f1 is 31.36702654774944 and best f1 is 32.33944954128441
+epoch: 3, loss is 0.36021649837493896, f1 is 32.22372952102682 and best f1 is 32.33944954128441
+epoch: 4, loss is 0.3586282432079315, f1 is 31.837640716664026 and best f1 is 32.33944954128441
+epoch: 5, loss is 0.3563762605190277, f1 is 31.73000265745416 and best f1 is 32.33944954128441
+epoch: 6, loss is 0.35574832558631897, f1 is 31.69010170621908 and best f1 is 32.33944954128441
+Now task is 4, total trigger f1 is 58.12157798680331
+['Justifying', 'Receiving', 'Patrolling', 'Recording', 'Legal_rulings', 'Labeling', 'Communication', 'Arrest', 'Motion_directional', 'Kidnapping', 'Traveling', 'Placing', 'Giving', 'Commerce_sell', 'Defending', 'Social_event', 'Submitting_documents', 'Expressing_publicly', 'Building', 'Legality', 'Wearing', 'Death', 'Cause_to_make_progress', 'Temporary_stay', 'Assistance', 'Institutionalization', 'Getting', 'Agree_or_refuse_to_act', 'Recovering', 'Protest', 'Employment', 'Statement', 'Scrutiny', 'Quarreling', 'Self_motion']
+now is training trigger detection model
+epoch: 0, loss is 0.33742526173591614
+epoch: 1, loss is 0.1623563915491104
+epoch: 2, loss is 0.11749672889709473
+epoch: 3, loss is 0.09345468133687973
+epoch: 4, loss is 0.0757751539349556
+tensor([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,
+         15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,
+         29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,
+         43,  44,  45,  46,  47,  48,  49,  50,  51,  52,  53,  54,  55,  56,
+         57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,
+         71,  72,  73,  74,  75,  76,  77,  78,  79,  80,  81,  82,  83,  84,
+         85,  86,  87,  88,  89,  90,  91,  92,  93,  94,  95,  96,  97,  98,
+         99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+        127, 128, 129, 130, 131, 132, 133,   0], device='cuda:0')
+epoch: 0, loss is 0.4913959801197052, f1 is 28.10661690129417 and best f1 is 28.10661690129417
+epoch: 1, loss is 0.46385419368743896, f1 is 27.914873455205903 and best f1 is 28.10661690129417
+epoch: 2, loss is 0.4577302038669586, f1 is 27.81148298445096 and best f1 is 28.10661690129417
+epoch: 3, loss is 0.45325908064842224, f1 is 27.941007469833362 and best f1 is 28.10661690129417
+epoch: 4, loss is 0.45087918639183044, f1 is 27.942689780732998 and best f1 is 28.10661690129417
+epoch: 5, loss is 0.448870450258255, f1 is 27.637965493331162 and best f1 is 28.10661690129417
+Now task is 5, total trigger f1 is 53.837971990781774
+[78.88074575 68.60560439 61.15754726 58.07434153 56.23494124]Script started on 2024-06-18 04:51:26-04:00 [TERM="screen.xterm-256color" TTY="/dev/pts/3" COLUMNS="120" LINES="30"]
+[?2004h(base) [01;32mabmonsur@tarski[00m:[01;34m~/SCR/SCR[00m$ exit
+[?2004l
+exit
+
+Script done on 2024-06-18 04:51:37-04:00 [COMMAND_EXIT_CODE="0"]

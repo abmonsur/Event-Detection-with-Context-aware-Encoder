@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment/secrets
+.env
+*.key
+*.pem
+
+# Large model/checkpoint files
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Data files
+data/
+*.csv
+*.jsonl
+*.npz

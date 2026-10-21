@@ -1,5 +1,5 @@
-## SCR
-Hi! This is the repository for the EACL 2025 paper: [Event Detection with a Context-Aware Encoder and {L}o{RA} for Improved Performance on Long-Tailed Classes]
+
+Hi! This is the repository for the EACL 2025 paper: [Event Detection with a Context-Aware Encoder and LoRA for Improved Performance on Long-Tailed Classes]
 ## Requirements
 
 Please make sure you have installed the packages in [./environment.yml](https://github.com/nju-websoft/SCR/blob/main/environment.yml).

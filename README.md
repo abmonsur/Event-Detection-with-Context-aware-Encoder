@@ -1,5 +1,5 @@
 
-Hi! This is the repository for the EACL 2026 paper: [Event Detection with a Context-Aware Encoder and LoRA for Improved Performance on Long-Tailed Classes]
+Hi! This is the repository for the EACL 2026 paper: [Event Detection with a Context-Aware Encoder and LoRA for Improved Performance on Long-Tailed Classes](https://aclanthology.org/2026.findings-eacl.314/)
 ## Requirements
 
 Please make sure you have installed the packages in [./environment.yml](https://github.com/nju-websoft/SCR/blob/main/environment.yml).
@@ -10,7 +10,7 @@ We use the RAMS and MAVEN datasets for evaluation.
 
 ## Pretrained Models
 
-Download pretrained language model from [huggingface](https://huggingface.co/bert-base-uncased) and put it into the [./pertrain_model directory]
+Download pretrained language BERT model from [huggingface](https://huggingface.co/bert-base-uncased) and put it into the pretrain model directory. You can use any encoder model. For our Llama model, download and put a llama model in that directory.
 
 ## Training and Testing
 
